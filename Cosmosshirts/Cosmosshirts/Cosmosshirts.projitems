@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{EC5DD1F9-3823-4D03-8E67-CF9DBA6ABAEF}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Cosmosshirts</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\BaseBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\EmbeddedImages.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\FreshViewModelMapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MasterDetailNavigationContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\MenuItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Product.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PageModel\AllProductsPageModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PageModel\BasePageModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\EventToCommandBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PageModel\ContactUsPageModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PageModel\MainPageModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PageModel\NewProductsPageModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\AllProductsPage.xaml.cs">
+      <DependentUpon>AllProductsPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\ContactUsPage.xaml.cs">
+      <DependentUpon>ContactUsPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\NewProductsPage.xaml.cs">
+      <DependentUpon>NewProductsPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DatabaseService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IDatabaseService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Assets\image-placeholder.png" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\AllProductsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\NewProductsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\ContactUsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

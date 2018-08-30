@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pageModel="clr-namespace:Cosmosshirts.PageModel;assembly=Cosmosshirts.Android"
+             xmlns:EmbeddedImage="clr-namespace:Cosmosshirts.Helpers;assembly=Cosmosshirts.Android"
+                  xmlns:View="clr-namespace:Cosmosshirts.Page;assembly=Cosmosshirts.Android"
+             x:Class="Cosmosshirts.Page.MainPage"
+             BackgroundColor="#46464F" Title="القائمة ">
+    <MasterDetailPage.Master>
+        <ContentPage Title="القائمة">
+            <StackLayout>
+                <Image Source="{EmbeddedImage:EmbeddedImages ResourceId=Cosmosshirts.Assets.image-placeholder.png}"
+                       Aspect="AspectFit" HeightRequest="200" WidthRequest="300" />
+                <ListView x:Name="MenuListView"
+                          ItemsSource="{Binding MenuItems}"
+                          SelectedItem="{Binding MenuItem}">
+                    <ListView.Behaviors>
+                        <pageModel:EventToCommandBehavior  Command="{Binding SelectedItemCommand}"
+                                                           EventName="ItemSelected" />
+                    </ListView.Behaviors>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" >
+                                    <Image Source="{Binding  MenuItemImage}"/>
+                                    <Label Text="{Binding Label}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <View:AllProductsPage Title="جميع المنتجات"/>
+      
+             
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+
+
+
+</MasterDetailPage>
